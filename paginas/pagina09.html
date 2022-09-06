@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página 01</title>
+    <title>Página 09</title>
 
     <!-- Estilos -->
     <link rel="stylesheet" href="../css/estilos.css">
@@ -22,8 +22,8 @@
 </head>
 <body class="pagina">
 
-    <img class="elementos" id="texto" src="../img/pagina01/texto.png" data-posX="0" data-posY="0"/>
-    <img class="elementos" id="boton" src="../img/pagina01/boton.png" data-posX="713" data-posY="441"/>
+    <img class="elementos" id="background" src="../img/pagina09/background.png" data-posX="0" data-posY="0"/>
+    <img class="elementos" id="texto" src="../img/pagina09/texto.png" data-posX="0" data-posY="0"/>
 
     
     <!-- Script de la página -->
@@ -31,8 +31,8 @@
 
         // Variable----------------------------------------------------
         let aplicacion = parent;
+        const background = $('#background');
         const texto = $('#texto');
-        const boton = $('#boton');
 
         // Audios------------------------------------------------------
         const audio = [
@@ -42,26 +42,18 @@
         // Al cargarse la página
         $(window).on("load", function(){
             redimensionarElementos();
-            aplicacion.desactivarBotonAdelante();
-            aplicacion.desactivarBotonAtras();
             aplicacion.cargando(iniciarContenido);
         });
 
         function iniciarContenido(){
-            aplicacion.reproducirAudio(audio[0], activarBoton, 1);
-            animacionEntrada(texto, 'izquierda-derecha', 1, 1);
+            aplicacion.reproducirAudio(audio[0], finalPantalla, 1);
+            animacionEntrada(background, 'default', 1, 1);
+            animacionEntrada(texto, 'default', 1, 2);
         }
 
-        function activarBoton(){
-            parpadear(boton);
+        function finalPantalla(){
+            aplicacion.terminaPantalla();
         }
-
-        boton.click(function(){
-            if(boton.css('cursor') == 'pointer'){
-                dejarParpadear(boton);
-                aplicacion.siguientePagina();
-            }
-        });
 
     </script>
 </body>
