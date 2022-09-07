@@ -23,7 +23,9 @@
 <body class="pagina">
 
     <img class="elementos" id="fondo" src="../img/pagina04/fondo.png" data-posX="0" data-posY="0"/>
-    <img class="elementos" id="boton" src="../img/pagina04/boton.png" data-posX="688.979" data-posY="282.005"/>
+    <a href="../infografia/CRM Farming Portifolio.pdf" target="_blank" class="elementos" id="boton" data-posX="688.979" data-posY="282.005">
+        <img src="../img/pagina04/boton.png" />
+    </a>
 
     
     <!-- Script de la página -->
@@ -58,6 +60,7 @@
         boton.click(function(){
             if(boton.css('cursor') == 'pointer'){
                 dejarParpadear(boton);
+                aplicacion.terminaPantalla();
             }
         });
 

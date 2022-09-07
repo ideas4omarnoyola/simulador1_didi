@@ -33,7 +33,6 @@
         let aplicacion = parent;
         const texto = $('#texto');
         const boton = $('#boton');
-        const robot = $('#robot');
 
         // Audios------------------------------------------------------
         const audio = [
@@ -51,7 +50,6 @@
         function iniciarContenido(){
             aplicacion.reproducirAudio(audio[0], activarBoton, 1);
             animacionEntrada(texto, 'izquierda-derecha', 1, 1);
-            animacionEntrada(robot, 'izquierda-derecha', 1, 1);
         }
 
         function activarBoton(){
