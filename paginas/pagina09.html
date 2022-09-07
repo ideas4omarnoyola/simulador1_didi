@@ -24,6 +24,7 @@
 
     <img class="elementos" id="background" src="../img/pagina09/background.png" data-posX="0" data-posY="0"/>
     <img class="elementos" id="texto" src="../img/pagina09/texto.png" data-posX="0" data-posY="0"/>
+    <img class="elementos" id="confeti" src="../img/pagina09/confeti.png" data-posX="0" data-posY="0"/>
 
     
     <!-- Script de la página -->
@@ -33,10 +34,12 @@
         let aplicacion = parent;
         const background = $('#background');
         const texto = $('#texto');
+        const confeti = $('#confeti');
 
         // Audios------------------------------------------------------
         const audio = [
-            new Audio('../audios/audio0.mp3')
+            new Audio('../audios/ovacion.mp3'),
+            new Audio('../audios/pedidos_9.mp3')
         ]
 
         // Al cargarse la página
@@ -46,13 +49,19 @@
         });
 
         function iniciarContenido(){
-            aplicacion.reproducirAudio(audio[0], finalPantalla, 1);
+            aplicacion.reproducirAudio(audio[0], finalCurso, 1);
             animacionEntrada(background, 'default', 1, 1);
             animacionEntrada(texto, 'default', 1, 2);
+            animacionEntrada(confeti, 'arriba-abajo', 1, 2);
+        }
+
+        function finalCurso(){
+            aplicacion.reproducirAudio(audio[1], finalPantalla, 1);
+            animacionSalida(confeti, 'default', 1);
         }
 
         function finalPantalla(){
-            aplicacion.terminaPantalla();
+            console.log('Final');
         }
 
     </script>
