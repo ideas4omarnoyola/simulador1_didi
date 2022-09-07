@@ -129,17 +129,9 @@
 
         btnNavegacion.click(()=>{
             if(btnNavegacion.css('cursor') == 'pointer'){
-                aplicacion.reproducirAudio(audio[4], escucharGlosario, 1);
+                aplicacion.reproducirAudio(audio[4], finalPagina, 1);
                 dejarParpadear(btnNavegacion);
                 animacionEntrada(info_navegacion, 'default', 1);
-            }
-        });
-
-        btnGlosario.click(()=>{
-            if(btnGlosario.css('cursor') == 'pointer'){
-                aplicacion.reproducirAudio(audio[5], finalPagina, 1);
-                dejarParpadear(btnGlosario);
-                animacionEntrada(info_glosario, 'default', 1);
             }
         });
 
